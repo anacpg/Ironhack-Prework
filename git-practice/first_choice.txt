@@ -1,0 +1,14 @@
+diff --git a/git-practice/three_doors.txt b/git-practice/three_doors.txt
+index 47cf4ad..74e6a6c 100644
+--- a/git-practice/three_doors.txt
++++ b/git-practice/three_doors.txt
+@@ -1,4 +1,7 @@
+ 
+ You are in a room with three doors.
+ 
+-Which door will you go through?
+\ No newline at end of file
++Which door will you go through?
++
++More 
++More
