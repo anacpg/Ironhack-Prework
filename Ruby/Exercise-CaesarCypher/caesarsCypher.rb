@@ -40,9 +40,7 @@ def solve_cipher(input)
 	return result
 end
 
-puts solve_cipher("ifmmp")
-puts solve_cipher("IFMMP")
-# should return "hello"
+
 
 
 
@@ -80,9 +78,6 @@ def solve_cipher2(input, key)
 	return result
 end
 
-puts solve_cipher2("p| uhdo qdph lv grqdog gxfn", -3)
-
-
 
 def solve_cipher3(input)
 	
@@ -116,8 +111,16 @@ def solve_cipher3(input)
 	return result
 end
 
-puts solve_cipher3("EBH EBH")
 
+
+
+puts solve_cipher("ifmmp")
+puts solve_cipher("IFMMP")
 # should return "hello"
+
+puts solve_cipher2("p| uhdo qdph lv grqdog gxfn", -3)
+
+puts solve_cipher3("EBH EBH")
+# should return "BYE BYE"
 
 
