@@ -1,0 +1,17 @@
+
+
+.niceParagraph {
+  background-color: grey;
+  font-family: "Baskerville";
+}
+
+.redParagraph {
+
+	background-color: red;
+	font-family: "courier";
+}
+
+table {
+	background-color: yellow;
+  	font-family: "Baskerville";
+}

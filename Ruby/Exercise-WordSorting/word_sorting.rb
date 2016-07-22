@@ -2,7 +2,7 @@
 
 #### Word sorting
 
-def wordSortin1(sentence)
+def wordSortin(sentence)
 
 	#eliminacion de signos de puntuacion y separacion de sentence en palabras.
 	words_without_puc = sentence.gsub(/[^a-zA-Z0-9\s]/i, '').split 
@@ -21,7 +21,7 @@ end
 puts "A sentence, please"
 sentence = gets.chomp
 
-puts wordSortin1(sentence)
+puts wordSortin(sentence)
 =end
 
-puts wordSortin1("Esto es una prueba. Ejercicio 2, wordsorting.")
+puts wordSortin("Esto es una prueba. Ejercicio 2, wordsorting.")
