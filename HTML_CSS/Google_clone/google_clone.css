@@ -1,0 +1,81 @@
+
+/*color gris clarito --> ECECEC*/
+
+.list_line{
+	vertical-align: middle;
+	display: inline;
+	margin: 0 10px 0 0;
+	font-family: arial,sans-serif;
+	font-size: 13px;
+}
+
+.list_line_right{
+	float: right;
+	display: inline;
+	margin: 0 15px 0 0;
+}
+
+.main_box{
+	margin:auto;
+	padding-top: 70px;
+	width: 50%;
+}
+
+.google_icon{
+
+	margin: auto;
+	width: 50%;
+}
+
+.search_box{
+
+	width: 600px;
+	height: 35px;
+	margin:auto;
+	padding-top: 2px;
+	padding-right: 2px;
+	border-style: solid;
+	border-color: grey	;
+	border-width: 1px;
+}
+
+.micro{
+	float: right;
+}
+
+.buttons_box{
+	padding-top: 40px;
+	margin: auto;
+	width: 25%;
+
+}
+
+.button{
+	    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+	height: 36px;
+    line-height: 27px;
+	color: #757575;
+	font-size: 13px;
+    font-weight: bold;
+    margin: 11px 4px;
+    min-width: 54px;
+    padding: 0 16px;
+    text-align: center;
+}
+
+footer{
+	padding-top: 1px;
+	width: 1200px;
+	height: 50px;
+	margin-left:20px;
+	margin-top: 125px; 
+	padding-right: 20px;
+	background-color: #ECECEC;
+	color: #303030;
+	font-family: arial,sans-serif;
+	    font-size: 13px;
+}
+
+
