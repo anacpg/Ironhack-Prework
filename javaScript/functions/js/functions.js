@@ -19,6 +19,8 @@
 
 function dniLetter( dni ) {
 
+	//podria haber usado charAt()
+
 	var lockup = 'TRWAGMYFPDXBNJZSQVHLCKE';
 	letters = lockup.split('');	
 	expReg = /[a-zA-Z]/;

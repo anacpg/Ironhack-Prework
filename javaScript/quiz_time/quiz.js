@@ -54,12 +54,59 @@ function question3() {
 
     default:
     	alert("Please answer: Java, LiveScript, JavaLive, or ScriptyScript ");
-    	return question3;
+    	return question3();
     	break;
   }
   responses.push(secondQuestion);
 
 }
+
+function question4() {
+ 
+	var att = 3;
+
+	while (att > 0){
+		var js = prompt('What is the solutions? \n var a = 1, b = 3; \n sqrt( ((a) + ((b) * 5)) );');
+		if (js === '4') {
+    		thirdQuestion = true;
+    		att = 0;
+  		}
+  		else{
+  			att--;
+  			if (att == 0){
+  				alert("Wrong, sorry!");
+  				thirdQuestion = false;
+  			}
+  			 else {
+  				alert("Try Again!");
+  			}
+  		}
+	}		
+  
+  responses.push(thirdQuestion);
+
+}
+
+
+
+function question5() {
+
+  var firstQuestion = prompt('Does "Hello" === "hello" ? (Yes or No)')
+
+// why do you need to convert the answer to lowercase?
+  if (firstQuestion.toLowerCase() === 'yes') {
+    fourQuestion = false;
+  } else if (firstQuestion.toLowerCase() === 'no') {
+    fourQuestion = true;
+  } else {
+// what if the user writes something other than yes or no? 
+// they will have to answer the question again
+    alert("Please answer either Yes or No");
+    return question5();
+  }
+  responses.push(fourQuestion); // add the true or false value to the responses array
+}
+
 
 function evaluate(responsesArray) {
 
@@ -89,8 +136,7 @@ function evaluate(responsesArray) {
 function showResults() {
 
 // display the user results
-	alert("Corrects answer: "+ user.corrects);
-	alert("Incorrects answer: "+ user.incorrects);
+	alert("Corrects answer: "+ user.corrects + "\nIncorrects answer: "+ user.incorrects);
 
 }
 
@@ -98,9 +144,9 @@ function showResults() {
 
 
 question1(); 
-
 question2();
-
 question3();
+question4();
+question5();
 
 evaluate(responses);
