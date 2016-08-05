@@ -82,6 +82,12 @@ function findLongestWord( array_words ){
 	return max_length;
 	 
 
+	/*
+	array_words.sort(function(a,b)){
+		return b.length - a.length
+	});
+	*/ 
+
 }
 
 console.log( findLongestWord( ["Richie", "Joanie", "Greg", "Marcia", "Bobby"] ) ===6 );

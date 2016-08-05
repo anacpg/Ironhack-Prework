@@ -16,8 +16,108 @@ var myRover2 = {
   row : 10
 };
 
+function goTopGrid(rover){
+  var error = "";
+  if (rover.position[0] < rover.row){
+    if(grid[rover.position[0]+ 1][rover.position[1]] === ''  ){
+      rover.position[0]++
+    }else{
+      error = "Accident";
+    }
+
+  }
+  else{
+    error = "Outside the boundaries!!";
+  }
+  return error;
+}
 
 
+function goBottonGrid(rover){
+
+  var error = ""
+
+  if(rover.position[0] > 0){
+    if (grid[rover.position[0]-1][rover.position[1]] === '' ){
+      rover.position[0]--
+    }else{
+      error = "Accident!!";
+    }
+    
+  }else{
+    error = "Outside the boundaries!!";
+  }
+  return error;
+}
+
+function goLeftGrid(rover){
+  var error = "";
+  if (rover.position[1] < grid[0].length){
+    if (rover.position[pos[0]][rover.position[1]+1] === '' ){
+      rover.position[1]++
+    }else{
+      error = "Accident!!"
+    }
+  }else{
+    error = "Outside the boundaries!!";
+  }
+
+  return error;
+}
+
+function goRigthGrid(rover){
+
+  var error = "";
+
+  if(rover.position[1] > 0){
+    if (grid[rover.position[0]][rover.position[1]-1] === ''){
+      rover.position[1]--  
+    }else{
+      error = "Accident!!"
+    }
+  }else{
+    error = "Outside the boundaries!!";
+  }
+  return error;
+}
+
+
+
+function goForward(rover) {
+  var error = false;
+  var pos = [rover.position[0], rover.position[1]];
+
+  //compruebo no salirme del grid y no chocarme
+  switch(rover.direction) {
+    case 'N':
+      error = goTopGrid(rover,grid);
+      break;
+
+    case 'E':
+      error = goRigthGrid(rover);
+      break;
+
+    case 'S':
+      error = goBottonGrid(rover);
+      break;
+
+    case 'W':
+      error = goLeftGrid(rover);
+      break;
+  };
+
+  if(error){
+    alert(error + " You lost! ");
+  }
+  else{
+    rover.position = pos;  
+    console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
+  }
+
+  
+}
+
+/*
 
 function goForward(rover) {
   var error = false;
@@ -87,6 +187,7 @@ function goForward(rover) {
 
   
 }
+*/
 
 function goBack(rover) {
   var error = "";
@@ -197,7 +298,7 @@ function createGrid(row, column) {
   return array;
 }
 
-function addObstacles(array, grid){
+function addObstacles(array){
 
   aux = [0,0]
 
@@ -209,7 +310,6 @@ function addObstacles(array, grid){
     grid[aux[0]][aux[1]] = "X";
     aux = [0,0];
   }
-  return grid;
 
   //¿Es necesario que devuelva el grid o como se pasa por referencia no hace falta?
 }
@@ -217,6 +317,10 @@ function addObstacles(array, grid){
 function movRover(rover, command) {
   for (var i = 0; i < command.length; i++ ){
     mov = command.charAt(i);
+
+    directions = {'f': goForward}
+
+    directions[mov](rover)
 
     switch(mov){
       case 'f':
@@ -242,7 +346,7 @@ function movRover(rover, command) {
 var grid = createGrid(10,10);
 grid = addObstacles([[1,1], [2,3], [3,9], [5,6] ,[6,3], [7,3] ,[8,8]] , grid);
 
-exp = /^[fblr]*$/
+exp = /^[fblr]*$/ //Expresion regular que verifica que solo puede haber 'f', 'b', 'l' o 'r'.
 flag = false;
 var command = comman2 = "";
 

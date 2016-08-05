@@ -1,4 +1,4 @@
-
+'use strict';
 
 // QUIZ TIME
 
@@ -24,7 +24,7 @@ function question2() {
 // what if the user writes something other than yes or no? 
 // they will have to answer the question again
     alert("Please answer either Yes or No");
-    return question2();
+    question2();
   }
   responses.push(firstQuestion); // add the true or false value to the responses array
 }
@@ -34,6 +34,15 @@ function question3() {
   
   var js = prompt('What was the original name for JavaScript: Java, LiveScript, JavaLive, or ScriptyScript?');
   js = js.toLowerCase();
+
+  options = {
+    "java": false,
+    lis
+  }
+
+  if(options[js]){
+
+  }
 
   switch (js) {
     case "java":
@@ -54,33 +63,31 @@ function question3() {
 
     default:
     	alert("Please answer: Java, LiveScript, JavaLive, or ScriptyScript ");
-    	return question3();
+    	question3();
     	break;
   }
   responses.push(secondQuestion);
-
 }
 
 function question4() {
  
 	var att = 3;
+  var thirdQuestion = false
 
-	while (att > 0){
+	while (att > 0 && !thirdQuestion){
 		var js = prompt('What is the solutions? \n var a = 1, b = 3; \n sqrt( ((a) + ((b) * 5)) );');
 		if (js === '4') {
     		thirdQuestion = true;
-    		att = 0;
-  		}
-  		else{
-  			att--;
-  			if (att == 0){
-  				alert("Wrong, sorry!");
-  				thirdQuestion = false;
-  			}
-  			 else {
-  				alert("Try Again!");
-  			}
-  		}
+  	}
+  	else{
+			att--;
+			if (att == 0){
+				alert("Wrong, sorry!");
+			}
+			else {
+				alert("Try Again!");
+			}
+		}
 	}		
   
   responses.push(thirdQuestion);
@@ -102,7 +109,7 @@ function question5() {
 // what if the user writes something other than yes or no? 
 // they will have to answer the question again
     alert("Please answer either Yes or No");
-    return question5();
+    question5();
   }
   responses.push(fourQuestion); // add the true or false value to the responses array
 }
@@ -116,7 +123,7 @@ function evaluate(responsesArray) {
 
 // populate the “totals” variables from the “responsesArray”
 	for (var i in responsesArray){
-		if(responsesArray[i] === true){
+		if(responsesArray[i]){
 			corrects++;
 			console.log(corrects);
 		}

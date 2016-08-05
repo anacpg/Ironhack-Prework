@@ -4,6 +4,7 @@
 class ShoppingCart
   def initialize
     @items = []
+
   end
 
   def add_item(item)
@@ -34,10 +35,6 @@ class Item
       @name = name
       @price = price
   end
-
-  def price
-      return @price
-  end
 end
 
 class Houseware < Item
@@ -45,19 +42,14 @@ class Houseware < Item
     	if @price > 100 
     		@price = @price * 0.95
     	end
-    	@price
   	end
 end
 
 class Fruit < Item
-	def price	    
-	    time = Time.new
-	    day = time.to_a[6]
-
-	  	if day == 0 or day == 6
-	  		@price = @price * 0.90
+	def price
+  	if Time.now.saturday? || Time.now.sunday?
+  		@price = @price * 0.90
 		end
-		return @price
 	end	
 end
 
